@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <packaging>pom</packaging>
+    <modules>
+        <module>flash-biz</module>
+        <module>flash-web</module>
+        <module>flash-dao</module>
+        <module>flash-common</module>
+    </modules>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.2.7.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>com.chan</groupId>
+    <artifactId>flash</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>flash</name>
+    <description>multi modules</description>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <flash.version>0.0.1-SNAPSHOT</flash.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.chan</groupId>
+                <artifactId>flash-biz</artifactId>
+                <version>${flash.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.chan</groupId>
+                <artifactId>flash-dao</artifactId>
+                <version>${flash.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.chan</groupId>
+                <artifactId>flash-common</artifactId>
+                <version>${flash.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.chan</groupId>
+                <artifactId>flash-web</artifactId>
+                <version>${flash.version}</version>
+            </dependency>
+            <!--dao层使用mybatis -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>3.3.1</version>
+            </dependency>
+            <!--这里暂定表对象使用lombok-->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.0</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.2.7.RELEASE</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>
